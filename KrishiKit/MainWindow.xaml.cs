@@ -20,6 +20,28 @@ namespace KrishiKit
     /// </summary>
     public partial class MainWindow : Window
     {
+        public bool isMenuOpen = false;
+
+        private void ToggleLogVisibilityButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (isMenuOpen)
+            {
+                System.Windows.Media.Animation.Storyboard _storyboard;
+                _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+                _storyboard.Begin(menuCanvas);
+
+                isMenuOpen = false;
+            }
+            else
+            {
+                System.Windows.Media.Animation.Storyboard sb;
+                sb = Resources["ShowLog"] as System.Windows.Media.Animation.Storyboard;
+                sb.Begin(menuCanvas);
+
+                isMenuOpen = true;
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
