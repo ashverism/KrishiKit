@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KrishiKit"
-        mc:Ignorable="d" ResizeMode="NoResize"
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="600" Width="360" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="ShowLog" >
@@ -38,12 +38,11 @@
             <Image Source="Resources/menu.png" x:Name="image4" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="170"/>
             <Image Source="Resources/menu.png" x:Name="image5" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="240"/>
             <Image Source="Resources/menu.png" x:Name="image6" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="312"/>
-            <TextBox x:Name="textBox" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="19" Width="146"/>
-            <TextBox x:Name="textBox2" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="19" Width="146"/>
-            <TextBox x:Name="textBox3" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="312" Width="146"/>
-            <TextBox x:Name="textBox4" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="240" Width="146"/>
-            <TextBox x:Name="textBox5" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="170" Width="146"/>
-            <TextBox x:Name="textBox6" Height="47" Canvas.Left="102" TextWrapping="Wrap" Text="TextBox" Canvas.Top="95" Width="146"/>
+            <Label x:Name="label1" Content="Label" Canvas.Left="92" Canvas.Top="19" Height="47" Width="146"/>
+            <Label x:Name="label2" Content="Label" Canvas.Left="92" Canvas.Top="312" Height="47" Width="146"/>
+            <Label x:Name="label3" Content="Label" Canvas.Left="92" Canvas.Top="240" Height="47" Width="146"/>
+            <Label x:Name="label4" Content="Label" Canvas.Left="92" Canvas.Top="169" Height="47" Width="146"/>
+            <Label x:Name="label5" Content="Label" Canvas.Left="92" Canvas.Top="95" Height="47" Width="146"/>
         </Canvas>
     </Grid>
 </Window>
