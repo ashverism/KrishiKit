@@ -30,19 +30,22 @@
             <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33"/>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="20" Margin="68,140,34,0" TextWrapping="Wrap" Text="News Feed" VerticalAlignment="Top" Width="258"/>
-        <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="68,165,0,0" VerticalAlignment="Top" Width="258">
-            <Image Source="Resources/menu.png" x:Name="image1" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
-            <Image Source="Resources/menu.png" x:Name="image2" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
-            <Image Source="Resources/menu.png" x:Name="image3" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="96"/>
-            <Image Source="Resources/menu.png" x:Name="image4" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="170"/>
-            <Image Source="Resources/menu.png" x:Name="image5" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="240"/>
-            <Image Source="Resources/menu.png" x:Name="image6" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="312"/>
-            <Label x:Name="label1" Content="Label" Canvas.Left="92" Canvas.Top="19" Height="47" Width="146"/>
-            <Label x:Name="label2" Content="Label" Canvas.Left="92" Canvas.Top="312" Height="47" Width="146"/>
-            <Label x:Name="label3" Content="Label" Canvas.Left="92" Canvas.Top="240" Height="47" Width="146"/>
-            <Label x:Name="label4" Content="Label" Canvas.Left="92" Canvas.Top="169" Height="47" Width="146"/>
-            <Label x:Name="label5" Content="Label" Canvas.Left="92" Canvas.Top="95" Height="47" Width="146"/>
-        </Canvas>
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
+            <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
+                <Image Source="Resources/menu.png" x:Name="image1" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
+                <Image Source="Resources/menu.png" x:Name="image2" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
+                <Image Source="Resources/menu.png" x:Name="image3" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="96"/>
+                <Image Source="Resources/menu.png" x:Name="image4" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="170"/>
+                <Image Source="Resources/menu.png" x:Name="image5" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="240"/>
+                <Image Source="Resources/menu.png" x:Name="image6" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="312"/>
+                <Label x:Name="label1" Content="Label" Canvas.Left="92" Canvas.Top="19" Height="47" Width="146"/>
+                <Label x:Name="label2" Content="Label" Canvas.Left="92" Canvas.Top="312" Height="47" Width="146"/>
+                <Label x:Name="label3" Content="Label" Canvas.Left="92" Canvas.Top="240" Height="47" Width="146"/>
+                <Label x:Name="label4" Content="Label" Canvas.Left="92" Canvas.Top="169" Height="47" Width="146"/>
+                <Label x:Name="label5" Content="Label" Canvas.Left="92" Canvas.Top="95" Height="47" Width="146"/>
+                <StackPanel Height="100" Canvas.Left="128" Canvas.Top="83" Width="100"/>
+            </Canvas>
+        </StackPanel>
     </Grid>
 </Window>
