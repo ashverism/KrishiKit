@@ -30,7 +30,10 @@
             <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33"/>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
-        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel">
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="120">
+            <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
             <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
                 <Image Source="Resources/news1.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
