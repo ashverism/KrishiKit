@@ -96,7 +96,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\news1.jpg" />
+    <Resource Include="Resources\news2.jpg" />
+    <Resource Include="Resources\news3.gif" />
+    <Resource Include="Resources\news4.jpg" />
+    <Resource Include="Resources\news5.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Menu.png" />
   </ItemGroup>
