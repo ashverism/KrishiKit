@@ -16,7 +16,7 @@
     </Window.Resources>
     <Grid>
         <Image Source="Resources/Outline.png" Stretch="Fill"/>
-        <Canvas x:Name="menuCanvas" Panel.ZIndex="50" Background="CornflowerBlue" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="212" Margin="-160,57,0,0" Opacity="0.9">
+        <Canvas x:Name="menuCanvas" Panel.ZIndex="50" Background="CornflowerBlue" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="212" Margin="-160,57,0,0">
             <Menu Height="Auto" Margin="178,3,0,0">
                 <MenuItem Width="30" Height="25" HorizontalAlignment="Right" Click="ToggleLogVisibilityButtonClicked">
                     <MenuItem.Effect>
