@@ -45,6 +45,8 @@ namespace KrishiKit
         public MainWindow()
         {
             InitializeComponent();
+            //string page_source = "http://farmer.gov.in/mspstatements.aspx";
+            //MSP.getMSP();
         }
     }
 }
