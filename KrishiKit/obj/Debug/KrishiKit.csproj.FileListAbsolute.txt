@@ -13,21 +13,16 @@ C:\Users\Kaustubh\Documents\Visual Studio 2015\Projects\KrishiKit\KrishiKit\obj\
 C:\Users\Kaustubh\Documents\Visual Studio 2015\Projects\KrishiKit\KrishiKit\obj\Debug\KrishiKit.g.resources
 C:\Users\Kaustubh\Documents\Visual Studio 2015\Projects\KrishiKit\KrishiKit\obj\Debug\KrishiKit.Properties.Resources.resources
 C:\Users\Kaustubh\Documents\Visual Studio 2015\Projects\KrishiKit\KrishiKit\obj\Debug\KrishiKit.csproj.GenerateResource.Cache
-H:\Project\KrishiKit\bin\Debug\KrishiKit.exe.config
-H:\Project\KrishiKit\obj\Debug\KrishiKit.csprojResolveAssemblyReference.cache
-H:\Project\KrishiKit\obj\Debug\MainWindow.g.cs
-H:\Project\KrishiKit\obj\Debug\App.g.cs
-H:\Project\KrishiKit\obj\Debug\KrishiKit_MarkupCompile.cache
-H:\Project\KrishiKit\obj\Debug\KrishiKit_MarkupCompile.lref
-H:\Project\KrishiKit\bin\Debug\KrishiKit.exe
-H:\Project\KrishiKit\bin\Debug\KrishiKit.pdb
-H:\Project\KrishiKit\bin\Debug\GemBox.Spreadsheet.dll
-H:\Project\KrishiKit\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
-H:\Project\KrishiKit\bin\Debug\GemBox.Spreadsheet.xml
-H:\Project\KrishiKit\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
-H:\Project\KrishiKit\obj\Debug\MainWindow.baml
-H:\Project\KrishiKit\obj\Debug\KrishiKit.g.resources
-H:\Project\KrishiKit\obj\Debug\KrishiKit.Properties.Resources.resources
-H:\Project\KrishiKit\obj\Debug\KrishiKit.csproj.GenerateResource.Cache
-H:\Project\KrishiKit\obj\Debug\KrishiKit.exe
-H:\Project\KrishiKit\obj\Debug\KrishiKit.pdb
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\KrishiKit.exe
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\KrishiKit.pdb
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.csprojResolveAssemblyReference.cache
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\MainWindow.g.cs
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\App.g.cs
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit_MarkupCompile.cache
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit_MarkupCompile.lref
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\MainWindow.baml
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.g.resources
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.Properties.Resources.resources
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.csproj.GenerateResource.Cache
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.exe
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.pdb
