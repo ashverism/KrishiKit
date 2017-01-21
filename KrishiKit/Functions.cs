@@ -43,8 +43,9 @@ namespace KrishiKit
 
             pat = "temp";
             lines[1] = dataSplit(data, pat);
-            float t = float.Parse(lines[1]) - 273;
-            lines[1] = t.ToString();
+            float t = float.Parse(lines[1])/10;
+            int w = (int)Math.Ceiling(t);
+            lines[1] = w.ToString();
 
             pat = "humidity";
             lines[2] = dataSplit(data, pat);
