@@ -81,7 +81,8 @@ namespace KrishiKit
                 dt.Rows.Add(dr);
             }
             //MessageBox.Show(temp)
-           
+            for (int __i = 2; __i < 8; __i++) dt.Columns.Remove(column_names[__i]);
+            
             return dt;
         }
     }
