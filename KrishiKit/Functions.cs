@@ -7,6 +7,7 @@ using System.Windows;
 
 namespace KrishiKit
 {
+    
     public static class functions
     {
         //public static void loginButtonClicked(object sender, RoutedEventArgs e)

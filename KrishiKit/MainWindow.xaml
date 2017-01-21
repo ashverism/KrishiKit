@@ -27,13 +27,25 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </Menu>
-            <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33"/>
+            <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33" Panel.ZIndex="200">
+                <Button Content="Login/Signup" Background="Moccasin" Margin="0,20,0,0" Height="31" Click="showLoginPanel"/>
+                <Button Content="Home/News" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showHome"/>
+                <Button Content="Weather" Height="31" Background="Moccasin" Margin="0,6,0,0"/>
+                <Button Content="Pesticides" Height="31" Background="Moccasin" Margin="0,6,0,0"/>
+                <Button Content="Fertilizers" Height="31" Background="Moccasin" Margin="0,6,0,0"/>
+                <Button Content="Crop Insurance" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showInsurancePanel"/>
+                <Button Content="Minimum Support Price" Height="31" Background="Moccasin" Margin="0,6,0,0"/>
+                <Button Content="DD Kisan" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showVideosPanel"/>
+            </StackPanel>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
-        <!--<StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="120">
-            <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483"/>
-        </StackPanel>-->
-        <!--<StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="-552,-557,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel">
+            <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483" Margin="0,0,-0.2,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="-552,-557,0,0" VerticalAlignment="Top" Width="289" x:Name="videosPanel">
+            <WebBrowser Source="https://www.youtube.com/channel/UCnDfmcUyhgJp6xC1LmBLfUg" Height="483" Margin="0,0,-0.2,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
             <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
                 <Image Source="Resources/news1.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
@@ -48,23 +60,23 @@
                 <TextBlock Canvas.Left="92" Canvas.Top="95" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="Dairy companies make a `cheesy' attempt to win desi palates"/></TextBlock>
                 <StackPanel Height="100" Canvas.Left="128" Canvas.Top="83" Width="100"/>
             </Canvas>
-        </StackPanel>-->
-        <WrapPanel Panel.ZIndex="145" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289">
+        </StackPanel>
+        <WrapPanel Panel.ZIndex="15" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="-552,-557,0,0" VerticalAlignment="Top" Width="289" x:Name="loginPanel">
             <Label Content="Username" Width="102" Margin="15,180,0,0"/>
             <TextBox x:Name="loginUsername" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,180,0,0"/>
             <Label Content="Password" Width="102" Margin="15,20,0,0"/>
             <PasswordBox x:Name="loginPass" Width="148" Margin="0,20,0,0"/>
             <Button Content="Login" Width="75" Height="25" Margin="54,30,0,0" Click="loginButtonClicked"/>
-            <Button Content="Signup" Width="75" Height="25" Margin="25,30,0,0"/>
+            <Button Content="Signup" Width="75" Height="25" Margin="25,30,0,0" Click="showSignupPanel"/>
         </WrapPanel>
 
-        <WrapPanel Panel.ZIndex="18" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="-590,57,0,0" VerticalAlignment="Top" Width="294">
+        <WrapPanel x:Name="signupPanel" Panel.ZIndex="18" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="-590,-557,0,0" VerticalAlignment="Top" Width="294">
             <Label TextElement.FontSize="13" TextElement.FontWeight="DemiBold" Content="Signup" Width="81" Margin="110,125,0,0"/>
             <Label TextElement.FontSize="12.5" Content="Username" Width="102" Margin="15,20,0,0"/>
             <TextBox x:Name="signUpUsername" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,20,0,0"/>
             <Label TextElement.FontSize="12.5" Content="Password" Width="102" Margin="15,20,0,0"/>
-            <PasswordBox x:Name="signUpPass" Width="148" Margin="0,20,0,0"/>
-            <TextBlock Visibility="Hidden" x:Name="textBlock1" TextWrapping="Wrap" TextAlignment="Center" Text="This is a Text Block. User data would be shown here." Width="251" Height="56" Margin="18,20,0,0"/>
+            <PasswordBox x:Name="signUpPass" Width="148" Margin="0,20,0,0" />
+            <TextBlock Visibility="Hidden" x:Name="signupError" TextWrapping="Wrap" TextAlignment="Center" Text="This is a Text Block. User data would be shown here." Width="251" Height="56" Margin="18,20,0,0"/>
             <Button x:Name="button1" Content="Signup" Width="75" Height="25" Margin="105,10,0,0" Click="signupButtonClicked"/>
         </WrapPanel>
     </Grid>
