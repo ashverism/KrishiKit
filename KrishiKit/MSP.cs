@@ -44,16 +44,17 @@ namespace KrishiKit
             string[] column_names = { "Commodity", "Variety", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17" };
             foreach (string name in column_names)
                 dt.Columns.Add(name, typeof(string));
-            string temp = string.Empty;
+            //string temp = string.Empty;
+
             foreach (var row in doc.DocumentNode.SelectNodes("//table[@id='tablebottom']/tr"))
             {
+                DataRow dr = dt.NewRow();
                 if (row.SelectNodes("td").Count == 1)
                 {
                     foreach (var cell in row.SelectNodes("td"))
                     {
-                        DataRow dr = dt.NewRow();
                         dr[column_names[0]] = safe(cell.InnerText + ' ');
-                        temp += safe(cell.InnerText + ' ');
+                        //temp += safe(cell.InnerText + ' ');
                     }
                 }
                 else if (row.SelectNodes("td").Count == 8)
@@ -61,10 +62,9 @@ namespace KrishiKit
                     int __i = 1;
                     foreach (var cell in row.SelectNodes("td"))
                     {
-                        DataRow dr = dt.NewRow();
                         dr[column_names[__i++]] = safe(cell.InnerText + ' ');
 
-                        temp += safe(cell.InnerText + ' ');
+                        //temp += safe(cell.InnerText + ' ');
                     }
                 }
                 else
@@ -72,15 +72,16 @@ namespace KrishiKit
                     int __i = 0;
                     foreach (var cell in row.SelectNodes("td"))
                     {
-                        DataRow dr = dt.NewRow();
                         dr[column_names[__i++]] = safe(cell.InnerText + ' ');
 
-                        temp += safe(cell.InnerText + ' ');
+                        //temp += safe(cell.InnerText + ' ');
                     }
                 }
-                temp += '\n';
+                //temp += '\n';
+                dt.Rows.Add(dr);
             }
-            MessageBox.Show(temp);
+            //MessageBox.Show(temp)
+           
             return dt;
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -46,7 +47,8 @@ namespace KrishiKit
         {
             InitializeComponent();
             //string page_source = "http://farmer.gov.in/mspstatements.aspx";
-            //MSP.getMSP();
+            MSPGrid.DataContext=   MSP.getMSP() ;
+            
         }
     }
 }

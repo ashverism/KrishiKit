@@ -33,7 +33,10 @@
         <!--StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="1">
             <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483"/>
         </StackPanel-->
-        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
+        <StackPanel Name="MSPStackPanel">
+            <DataGrid HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" Name="MSPGrid" ItemsSource="{Binding}" IsReadOnly="True" ></DataGrid>
+        </StackPanel>
+        <!--StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
             <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
                 <Image Source="Resources/news1.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
@@ -58,6 +61,6 @@
                 </TextBlock>
                 <StackPanel Height="100" Canvas.Left="128" Canvas.Top="83" Width="100"/>
             </Canvas>
-        </StackPanel>
+        </StackPanel-->
     </Grid>
 </Window>
