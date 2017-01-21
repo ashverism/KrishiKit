@@ -30,13 +30,10 @@
             <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33"/>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
-        <!--StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="1">
+        <!--<StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="120">
             <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483"/>
-        </StackPanel-->
-        <StackPanel Name="MSPStackPanel">
-            <DataGrid HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" Name="MSPGrid" ItemsSource="{Binding}" IsReadOnly="True" ></DataGrid>
-        </StackPanel>
-        <!--StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
+        </StackPanel>-->
+        <!--<StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
             <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
                 <Image Source="Resources/news1.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="19"/>
@@ -44,23 +41,31 @@
                 <Image Source="Resources/news3.gif" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="170"/>
                 <Image Source="Resources/news4.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="240"/>
                 <Image Source="Resources/news5.jpg" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="72" Canvas.Left="10" Canvas.Top="312"/>
-                <TextBlock Canvas.Left="92" Canvas.Top="19" Height="47" Width="146" TextWrapping="WrapWithOverflow">
-                    Optimise use of ground water says agriculture minister Radha Mohan Singh
-                </TextBlock>
-                <TextBlock Canvas.Left="92" Canvas.Top="312" Height="47" Width="146" TextWrapping="WrapWithOverflow">
-                    Green Revolution architect sounds alarm on India’s food security
-                </TextBlock>
-                <TextBlock Canvas.Left="92" Canvas.Top="240" Height="47" Width="146" TextWrapping="WrapWithOverflow">
-                    Government rules out lowering sugar import tax for now: Reports
-                </TextBlock>
-                <TextBlock Canvas.Left="92" Canvas.Top="169" Height="47" Width="146" TextWrapping="WrapWithOverflow">
-                  ‘Indore APMC to be fully cashless as farmers accepting alternative modes of payments’
-                </TextBlock>
-                <TextBlock Canvas.Left="92" Canvas.Top="95" Height="47" Width="146" TextWrapping="WrapWithOverflow">
-                    Dairy companies make a `cheesy' attempt to win desi palates
-                </TextBlock>
+                <TextBlock Canvas.Left="92" Canvas.Top="19" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="Optimise use of ground water says agriculture minister Radha Mohan Singh"/></TextBlock>
+                <TextBlock Canvas.Left="92" Canvas.Top="312" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="Green Revolution architect sounds alarm on India's food security"/></TextBlock>
+                <TextBlock Canvas.Left="92" Canvas.Top="240" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="Government rules out lowering sugar import tax for now: Reports"/></TextBlock>
+                <TextBlock Canvas.Left="92" Canvas.Top="169" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="'Indore APMC to be fully cashless as farmers accepting alternative modes of payments'"/></TextBlock>
+                <TextBlock Canvas.Left="92" Canvas.Top="95" Height="47" Width="146" TextWrapping="WrapWithOverflow"><Run Text="Dairy companies make a `cheesy' attempt to win desi palates"/></TextBlock>
                 <StackPanel Height="100" Canvas.Left="128" Canvas.Top="83" Width="100"/>
             </Canvas>
-        </StackPanel-->
+        </StackPanel>-->
+        <WrapPanel Panel.ZIndex="145" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289">
+            <Label Content="Username" Width="102" Margin="15,180,0,0"/>
+            <TextBox x:Name="loginUsername" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,180,0,0"/>
+            <Label Content="Password" Width="102" Margin="15,20,0,0"/>
+            <PasswordBox x:Name="loginPass" Width="148" Margin="0,20,0,0"/>
+            <Button Content="Login" Width="75" Height="25" Margin="54,30,0,0" Click="loginButtonClicked"/>
+            <Button Content="Signup" Width="75" Height="25" Margin="25,30,0,0"/>
+        </WrapPanel>
+
+        <WrapPanel Panel.ZIndex="18" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="-590,57,0,0" VerticalAlignment="Top" Width="294">
+            <Label TextElement.FontSize="13" TextElement.FontWeight="DemiBold" Content="Signup" Width="81" Margin="110,125,0,0"/>
+            <Label TextElement.FontSize="12.5" Content="Username" Width="102" Margin="15,20,0,0"/>
+            <TextBox x:Name="signUpUsername" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,20,0,0"/>
+            <Label TextElement.FontSize="12.5" Content="Password" Width="102" Margin="15,20,0,0"/>
+            <PasswordBox x:Name="signUpPass" Width="148" Margin="0,20,0,0"/>
+            <TextBlock Visibility="Hidden" x:Name="textBlock1" TextWrapping="Wrap" TextAlignment="Center" Text="This is a Text Block. User data would be shown here." Width="251" Height="56" Margin="18,20,0,0"/>
+            <Button x:Name="button1" Content="Signup" Width="75" Height="25" Margin="105,10,0,0" Click="signupButtonClicked"/>
+        </WrapPanel>
     </Grid>
 </Window>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,9 +43,38 @@ namespace KrishiKit
             }
         }
 
+        public void loginButtonClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = ((((sender as Button).Parent as WrapPanel).Parent as Grid).Parent as MainWindow);
+            if (loginSignup.Login(window.loginUsername.Text, window.loginPass.Password) == false)
+            {
+                MessageBox.Show("Invalid Credentials");
+            }
+            else
+            {
+
+            }
+        }
+
+        public void signupButtonClicked(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = ((((sender as Button).Parent as WrapPanel).Parent as Grid).Parent as MainWindow);
+            if (loginSignup.SignUp(window.loginUsername.Text, window.loginPass.Password) == false)
+            {
+                MessageBox.Show("Failed to signup");
+            }
+            else
+            {
+
+            }
+        }
+
         public MainWindow()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            //string page_source = "http://farmer.gov.in/mspstatements.aspx";
+           // MSPGrid.DataContext =   MSP.getMSP() ;
+            
         }
     }
 }
