@@ -44,7 +44,7 @@ namespace KrishiKit
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
     }
 }
