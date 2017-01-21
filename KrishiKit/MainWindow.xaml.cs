@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,8 +46,9 @@ namespace KrishiKit
         public MainWindow()
         {
             InitializeComponent();
-           // ExcelSheet.viewExcelFertiliser("Bhandara");
-           // ExcelSheet.viewExcelPesticides("Bhandara");
+            //string page_source = "http://farmer.gov.in/mspstatements.aspx";
+            MSPGrid.DataContext =   MSP.getMSP() ;
+            
         }
     }
 }
