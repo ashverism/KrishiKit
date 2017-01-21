@@ -105,5 +105,16 @@
             <TextBlock Visibility="Collapsed" x:Name="suggestionBox" TextWrapping="Wrap" TextAlignment="Center" Width="251" Height="56" Margin="18,20,0,0"/>
             <Button Content="Submit" Width="75" Margin="110,12,0,0" Click="showSuggestions"/>
         </WrapPanel>
+        <WrapPanel x:Name="userMainPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-645,-957,0,0">
+            <Button FontSize="12" FontWeight="DemiBold" Background="Moccasin" Content="Crop Suggestion" Width="150" Margin="76,180,0,0" Click="showCropSuggestionPanel"/>
+            <Button FontSize="12" FontWeight="DemiBold" Background="Moccasin" Content="Complaint/Help" Width="150" Margin="76,30,0,0" Click="showSupportPanel"/>
+            <Button FontSize="12" FontWeight="DemiBold" Background="Moccasin" Content="Logout" Width="150" Margin="76,30,0,0" Click="logout"/>
+        </WrapPanel>
+        <WrapPanel x:Name="supportPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-1059,57,0,0">
+            <TextBlock FontSize="13" FontWeight="DemiBold" TextWrapping="Wrap" Text="Support" Height="19" Width="99" Margin="101,100,0,0"/>
+            <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Details about lodging a complaint/help request" Margin="30,25,0,0" Width="225" Height="81"/>
+            <TextBox Height="96" TextWrapping="Wrap" FontWeight="UltraLight" Text="Enter Your Complaint here" Width="251" Margin="20,15,0,0"/>
+            <Button FontSize="13" FontWeight="DemiBold" Content="Submit" Width="85" Margin="98,15,0,0" Click="submitSupportRequest"/>
+        </WrapPanel>
     </Grid>
 </Window>

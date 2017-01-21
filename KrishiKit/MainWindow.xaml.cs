@@ -43,7 +43,7 @@ namespace KrishiKit
             else
             {
                 isLoggedIn = true;
-                showCropSuggestionPanel(null, null);
+                showUserMainPanel(null, null);
             }
         }
 
@@ -58,7 +58,7 @@ namespace KrishiKit
             else
             {
                 isLoggedIn = true;
-                showCropSuggestionPanel(null, null);
+                showUserMainPanel(null, null);
             }
         }
 
@@ -81,7 +81,7 @@ namespace KrishiKit
         {
             if (isLoggedIn)
             {
-                showCropSuggestionPanel(null, null);
+                showUserMainPanel(null, null);
                 return;
             }
             openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
@@ -106,11 +106,35 @@ namespace KrishiKit
             isMenuOpen = false;
         }
 
+        private void showSupportPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            supportPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = supportPanel;
+
+            isMenuOpen = false;
+        }
+
+        private void logout(object sender, RoutedEventArgs e)
+        {
+            isLoggedIn = false;
+            showLoginPanel(null, null);
+        }
+
+        private void submitSupportRequest(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Support request successfully submitted");
+            showUserMainPanel(null, null);
+        }
+
         private void showSignupPanel(object sender, RoutedEventArgs e)
         {
             if (isLoggedIn)
             {
-                showCropSuggestionPanel(null, null);
+                showUserMainPanel(null, null);
                 return;
             }
             openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
@@ -131,6 +155,18 @@ namespace KrishiKit
             _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
             _storyboard.Begin(menuCanvas);
             openPanel = insurancePanel;
+
+            isMenuOpen = false;
+        }
+
+        private void showUserMainPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            userMainPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = userMainPanel;
 
             isMenuOpen = false;
         }
