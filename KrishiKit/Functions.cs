@@ -6,7 +6,4 @@ using System.Threading.Tasks;
 
 namespace KrishiKit
 {
-    public static partial class functions{
-        
-    }   
 }
