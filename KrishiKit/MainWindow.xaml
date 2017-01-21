@@ -31,7 +31,7 @@
                 <Button Content="Login/Signup" Background="Moccasin" Margin="0,20,0,0" Height="31" Click="showLoginPanel"/>
                 <Button Content="Home/News" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showHome"/>
                 <Button Content="Weather" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showWeatherPanel"/>
-                <Button Content="Pesticides" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showfpPanel"/>
+                <Button Content="Fertilisers/Pesticides" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showFPPanel"/>
                 <Button Content="Crop Insurance" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showInsurancePanel"/>
                 <Button Content="Minimum Support Price" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showMSPPanel"/>
                 <Button Content="DD Kisan" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showVideosPanel"/>
@@ -42,9 +42,6 @@
             <DataGrid HorizontalAlignment="Left" MaxColumnWidth="113" Height="483" VerticalAlignment="Top" Width="289" ItemsSource="{Binding}" IsReadOnly="True"/>
         </StackPanel>
         <StackPanel x:Name="weatherPanel" Margin="-500,-500,0,0">
-            <DataGrid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" ItemsSource="{Binding}" IsReadOnly="True"/>
-        </StackPanel>
-        <StackPanel x:Name="FertilisersAndPesticidesPanel" Margin="-500,-500,0,0">
             <DataGrid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" ItemsSource="{Binding}" IsReadOnly="True"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="483" Margin="-552,-557,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel">
@@ -89,20 +86,24 @@
             <RadioButton x:Name="rb1" Content="Seller" GroupName="Person" Margin="65,18,0,0"/>
             <RadioButton x:Name="rb2" Content="Buyer" GroupName="Person" Margin="30,18,0,0"/>
             <TextBlock Visibility="Hidden" x:Name="signupError" TextWrapping="Wrap" TextAlignment="Center" Text="This is a Text Block. User data would be shown here." Width="251" Height="56" Margin="18,20,0,0"/>
-            <Button x:Name="button1" Content="Signup" Width="75" Height="25" Margin="105,10,0,0" Click="signupButtonClicked"/>
+            <Button Content="Signup" Width="75" Height="25" Margin="105,10,0,0" Click="signupButtonClicked"/>
         </WrapPanel>
-        <WrapPanel Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-645,57,0,0">
+        <WrapPanel x:Name="fertilisersPesticidesPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-645,-557,0,0">
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="14" FontWeight="DemiBold" TextAlignment="Center" Height="25" Margin="16.5,35,0,0"><Run Text="Districtwise authorised pesticide dealers"/></TextBlock>
             <RadioButton x:Name="radioButton" Content="Fertilizers" GroupName="Chem" Margin="40,15,0,0"/>
             <RadioButton x:Name="radioButton1" Content="Pesticides" GroupName="Chem" Margin="30,15,0,0"/>
             <ComboBox x:Name="cb1" Width="150" Margin="65,15,0,0"/>
+            <DataGrid Visibility="Collapsed" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" ItemsSource="{Binding}" IsReadOnly="True"/>
+            <Button Content="Submit" Width="75" Margin="110,12,0,0" Click="showFPData"/>
         </WrapPanel>
-        <WrapPanel x:Name="cropSuggestionPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-1068,-1057,0,0">
+        <WrapPanel x:Name="cropSuggestionPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-970,-1030,0,0">
             <TextBlock TextWrapping="Wrap" FontSize="14" FontWeight="DemiBold" TextAlignment="Center" Height="25" Margin="80,35,0,0"><Run Text="Crop Suggestion"/></TextBlock>
             <ComboBox x:Name="cb2" Width="190" Margin="48,15,0,0"/>
-            <RadioButton x:Name="rb5" Content="Rabi" GroupName="Crop" Margin="83,15,0,0"/>
-            <RadioButton x:Name="rb6" Content="Kharif" GroupName="Crop" Margin="30,15,0,0"/>
-            <Button x:Name="button" Content="Submit" Width="75" Margin="110,12,0,0"/>
+            <RadioButton x:Name="rb5" Content="Khareef" GroupName="Crop" Margin="33,15,0,0"/>
+            <RadioButton x:Name="rb6" Content="Rabi" GroupName="Crop" Margin="30,15,0,0"/>
+            <RadioButton x:Name="rb7" Content="Zaid" GroupName="Crop" Margin="30,15,0,0"/>
+            <TextBlock Visibility="Collapsed" x:Name="suggestionBox" TextWrapping="Wrap" TextAlignment="Center" Width="251" Height="56" Margin="18,20,0,0"/>
+            <Button Content="Submit" Width="75" Margin="110,12,0,0" Click="showSuggestions"/>
         </WrapPanel>
     </Grid>
 </Window>

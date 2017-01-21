@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KrishiKit
 {
@@ -63,7 +50,7 @@ namespace KrishiKit
         public void signupButtonClicked(object sender, RoutedEventArgs e)
         {
             MainWindow window = ((((sender as Button).Parent as WrapPanel).Parent as Grid).Parent as MainWindow);
-            if (window.loginUsername.Text == "" || window.loginPass.Password == "" ||loginSignup.SignUp(window.loginUsername.Text, window.loginPass.Password, (bool)rb1.IsChecked) == false)
+            if (window.signUpUsername.Text == "" || window.signUpPass.Password == "" ||loginSignup.SignUp(window.loginUsername.Text, window.loginPass.Password, (bool)rb1.IsChecked) == false)
             {
                 window.signupError.Visibility = Visibility.Visible;
                 window.signupError.Text = "Error Signing Up";
@@ -92,6 +79,11 @@ namespace KrishiKit
 
         private void showLoginPanel(object sender, RoutedEventArgs e)
         {
+            if (isLoggedIn)
+            {
+                showCropSuggestionPanel(null, null);
+                return;
+            }
             openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
             loginPanel.Margin = new Thickness(52, 57, 0, 0);
             System.Windows.Media.Animation.Storyboard _storyboard;
@@ -116,6 +108,11 @@ namespace KrishiKit
 
         private void showSignupPanel(object sender, RoutedEventArgs e)
         {
+            if (isLoggedIn)
+            {
+                showCropSuggestionPanel(null, null);
+                return;
+            }
             openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
             signupPanel.Margin = new Thickness(52, 57, 0, 0);
             System.Windows.Media.Animation.Storyboard _storyboard;
@@ -179,20 +176,7 @@ namespace KrishiKit
             isMenuOpen = false;
         }
 
-        private void showfpPanel(object sender, RoutedEventArgs e)
-        {
-            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
-            FertilisersAndPesticidesPanel.Margin = new Thickness(52, 57, 0, 0);
-            System.Windows.Media.Animation.Storyboard _storyboard;
-            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
-            _storyboard.Begin(menuCanvas);
-            openPanel = FertilisersAndPesticidesPanel;
-
-            functions.Calling();
-            //(FertilisersAndPesticidesPanel.Children[0] as DataGrid).DataContext = ;
-
-            isMenuOpen = false;
-        }
+        
 
         private void showVideosPanel(object sender, RoutedEventArgs e)
         {
@@ -206,5 +190,58 @@ namespace KrishiKit
             isMenuOpen = false;
         }
 
+        private void showFPPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            fertilisersPesticidesPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = fertilisersPesticidesPanel;
+
+            isMenuOpen = false;
+        }
+
+        private void showSuggestions(object sender, RoutedEventArgs e)
+        {
+            string state = (string)cb2.SelectedValue;
+            string season;
+            if ((bool)rb5.IsChecked)
+            {
+                season = "khareef";
+            }else if ((bool)rb6.IsChecked)
+            {
+                season = "rabi";
+            }else if ((bool)rb6.IsChecked)
+            {
+                season = "zaid";
+            }else
+            {
+                return;
+            }
+            string suggestion = SuggestCrops.getSuggestion(state, season);
+            if(suggestion == "")
+            {
+                suggestion = "No suggestions available";
+            }
+            suggestionBox.Visibility = Visibility.Visible;
+            suggestionBox.Text = suggestion;
+        }
+
+        private void showFPData(object sender, RoutedEventArgs e)
+        {
+            bool isFertilisers = (bool)radioButton.IsChecked;
+
+            (fertilisersPesticidesPanel.Children[4] as DataGrid).Visibility = Visibility.Visible;
+
+            if (isFertilisers)
+            {
+                (fertilisersPesticidesPanel.Children[4] as DataGrid).DataContext = ExcelSheet.viewExcelFertiliser((string)cb1.SelectedValue);
+            }
+            else
+            {
+                (fertilisersPesticidesPanel.Children[4] as DataGrid).DataContext = ExcelSheet.viewExcelPesticides((string)cb1.SelectedValue);
+            }
+        }
     }
 }

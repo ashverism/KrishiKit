@@ -193,6 +193,7 @@ namespace KrishiKit
                     {
                         //MessageBox.Show("Username already exists!");
                         sr.Close();
+                        return true;
                         return false;
                     }
                 }
@@ -201,11 +202,11 @@ namespace KrishiKit
             sw = System.IO.File.AppendText(filename);
             if (isSeller)
             {
-                sw.WriteLine(username + " " + password + "S");
+                sw.WriteLine(username + " " + password + "S ");
             }
             else
             {
-                sw.WriteLine(username + " " + password + "B");
+                sw.WriteLine(username + " " + password + "B ");
             }
             sw.Close();
             //MessageBox.Show("Registered successfully!");

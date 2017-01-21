@@ -73,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SuggestCrops.cs" />
     <Compile Include="ExcelSheet.cs" />
     <Compile Include="FarmerProfile.cs" />
     <Compile Include="Functions.cs" />
