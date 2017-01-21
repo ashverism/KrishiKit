@@ -47,7 +47,7 @@ namespace KrishiKit
         {
             InitializeComponent();
             //string page_source = "http://farmer.gov.in/mspstatements.aspx";
-            MSPGrid.DataContext=   MSP.getMSP() ;
+            MSPGrid.DataContext =   MSP.getMSP() ;
             
         }
     }
