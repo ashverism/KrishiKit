@@ -45,6 +45,8 @@ namespace KrishiKit
         public MainWindow()
         {
             InitializeComponent();
+           // ExcelSheet.viewExcelFertiliser("Bhandara");
+           // ExcelSheet.viewExcelPesticides("Bhandara");
         }
     }
 }
