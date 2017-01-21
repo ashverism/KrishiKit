@@ -130,6 +130,20 @@ namespace KrishiKit
             isMenuOpen = false;
         }
 
+        private void showMSPPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            mspPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = mspPanel;
+
+            (mspPanel.Children[0] as DataGrid).DataContext = MSP.getMSP();
+
+            isMenuOpen = false;
+        }
+
         private void showVideosPanel(object sender, RoutedEventArgs e)
         {
             openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
