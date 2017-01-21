@@ -43,3 +43,10 @@ C:\Users\Nancy\Source\Repos\KrishiKit\KrishiKit\obj\Debug\KrishiKit.pdb
 C:\Users\Nancy\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.dll
 C:\Users\Nancy\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Nancy\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.xml
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.dll
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\DON\Source\Repos\KrishiKit\KrishiKit\bin\Debug\HtmlAgilityPack.xml
