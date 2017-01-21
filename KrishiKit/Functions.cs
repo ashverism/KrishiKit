@@ -11,7 +11,7 @@ namespace KrishiKit
 {
     public static partial class functions
     {
-        static DataTable datatable = new DataTable();
+        public static DataTable weatherDataTable = new DataTable();
         static string currentForecast = string.Empty;
 
         public static void Calling()
@@ -28,7 +28,7 @@ namespace KrishiKit
                 WebClient client = new WebClient();
                 data = client.DownloadString("http://api.openweathermap.org/data/2.5/weather?q=dhanbad&appid=46bae8e6ef27dcf8ed7b5341931f4c99");
             }
-            catch (System.Net.WebException ex)
+            catch (WebException ex)
             {
                 string mess = "Web exception : ";
                 mess += ex.Message;
@@ -131,22 +131,22 @@ namespace KrishiKit
                     }
                 }
             }
-            datatable.Columns.Add("Time", typeof(string));
-            datatable.Columns.Add("Temperature", typeof(string));
-            datatable.Columns.Add("Humidity", typeof(string));
-            datatable.Columns.Add("Sky", typeof(string));
+            weatherDataTable.Columns.Add("Time", typeof(string));
+            weatherDataTable.Columns.Add("Temperature", typeof(string));
+            weatherDataTable.Columns.Add("Humidity", typeof(string));
+            weatherDataTable.Columns.Add("Sky", typeof(string));
             foreach (int item in dict.Keys)
             {
                 Fore v = dict[item];
-                DataRow dr = datatable.NewRow();
+                DataRow dr = weatherDataTable.NewRow();
                 dr["Temperature"] = v.temp;
                 dr["Humidity"] = v.humidity;
                 dr["Sky"] = v.clouds;
                 dr["Time"] = v.time;
-                datatable.Rows.Add(dr);
+                weatherDataTable.Rows.Add(dr);
             }
 
-            foreach (DataRow dr in datatable.Rows)
+            foreach (DataRow dr in weatherDataTable.Rows)
             {
                 foreach (var cell in dr.ItemArray)
                 {
@@ -172,7 +172,7 @@ namespace KrishiKit
         public static System.IO.StreamReader sr = null;
         public static System.IO.StreamWriter sw = null;
         private static string filename = "Resources/LoginSignUp.txt";
-        public static bool SignUp(string user, string pass)
+        public static bool SignUp(string user, string pass, bool isSeller)
         {
             username = user;
             password = pass;
@@ -199,15 +199,30 @@ namespace KrishiKit
                 sr.Close();
             }
             sw = System.IO.File.AppendText(filename);
-            sw.WriteLine(username + " " + password);
+            if (isSeller)
+            {
+                sw.WriteLine(username + " " + password + "S");
+            }
+            else
+            {
+                sw.WriteLine(username + " " + password + "B");
+            }
             sw.Close();
             //MessageBox.Show("Registered successfully!");
             return true;
         }
-        public static bool Login(string user, string pass)
+        public static bool Login(string user, string pass, bool isSeller)
         {
             username = user;
             password = pass;
+            string sellOrBuy;
+            if (isSeller)
+            {
+                sellOrBuy = "S";
+            }else
+            {
+                sellOrBuy = "B";
+            }
             string __line = string.Empty;
             try
             {
@@ -225,7 +240,7 @@ namespace KrishiKit
             while ((__line = sr.ReadLine()) != null)
             {
                 string[] pair = __line.Split(' ');
-                if (pair[0].Equals(username) && pair[1].Equals(password))
+                if (pair[0].Equals(username) && pair[1].Equals(password) && pair[2].Equals(sellOrBuy))
                 {
                     //MessageBox.Show("Login Successful");
                     sr.Close();

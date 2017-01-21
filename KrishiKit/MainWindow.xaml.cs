@@ -49,20 +49,21 @@ namespace KrishiKit
         public void loginButtonClicked(object sender, RoutedEventArgs e)
         {
             MainWindow window = ((((sender as Button).Parent as WrapPanel).Parent as Grid).Parent as MainWindow);
-            if (loginSignup.Login(window.loginUsername.Text, window.loginPass.Password) == false)
+            if (loginSignup.Login(window.loginUsername.Text, window.loginPass.Password, (bool)rb3.IsChecked) == false)
             {
                 MessageBox.Show("Invalid Credentials");
             }
             else
             {
                 isLoggedIn = true;
+                showCropSuggestionPanel(null, null);
             }
         }
 
         public void signupButtonClicked(object sender, RoutedEventArgs e)
         {
             MainWindow window = ((((sender as Button).Parent as WrapPanel).Parent as Grid).Parent as MainWindow);
-            if (window.loginUsername.Text == "" || window.loginPass.Password == "" ||loginSignup.SignUp(window.loginUsername.Text, window.loginPass.Password) == false)
+            if (window.loginUsername.Text == "" || window.loginPass.Password == "" ||loginSignup.SignUp(window.loginUsername.Text, window.loginPass.Password, (bool)rb1.IsChecked) == false)
             {
                 window.signupError.Visibility = Visibility.Visible;
                 window.signupError.Text = "Error Signing Up";
@@ -70,6 +71,7 @@ namespace KrishiKit
             else
             {
                 isLoggedIn = true;
+                showCropSuggestionPanel(null, null);
             }
         }
 
@@ -78,8 +80,14 @@ namespace KrishiKit
             InitializeComponent();
             openPanel = homePanel;
             //string page_source = "http://farmer.gov.in/mspstatements.aspx";
-           // MSPGrid.DataContext =   MSP.getMSP() ;
-            
+            // MSPGrid.DataContext =   MSP.getMSP() ;
+            string[] tokens = new string[] { "Anantpur", "Chittoor", "Nellore", "Visakhapatnam", "Ahmadabad", "Bhavnagar", "Kachchh", "Rajkot", "Amravati", "Bhandara", "Chandrapur", "Nagpur", "Debagarh", "Jharsuguda", "Nayagarh", "Puri" };
+            for (int i = 0; i < 16; i++)
+                cb1.Items.Add(tokens[i]);
+            string[] states = new string[] { "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttarakhand", "Uttar Pradesh", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Lakshadweep", "Puducherry" };
+            for (int j = 0; j < 36; j++)
+                cb2.Items.Add(states[j]);
+
         }
 
         private void showLoginPanel(object sender, RoutedEventArgs e)
@@ -140,6 +148,48 @@ namespace KrishiKit
             openPanel = mspPanel;
 
             (mspPanel.Children[0] as DataGrid).DataContext = MSP.getMSP();
+
+            isMenuOpen = false;
+        }
+
+        private void showCropSuggestionPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            cropSuggestionPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = cropSuggestionPanel;
+            
+            isMenuOpen = false;
+        }
+
+        private void showWeatherPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            weatherPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = weatherPanel;
+
+            functions.Calling();
+            (weatherPanel.Children[0] as DataGrid).DataContext = functions.weatherDataTable;
+
+            isMenuOpen = false;
+        }
+
+        private void showfpPanel(object sender, RoutedEventArgs e)
+        {
+            openPanel.Margin = new Thickness(-5000, -5000, 0, 0);
+            FertilisersAndPesticidesPanel.Margin = new Thickness(52, 57, 0, 0);
+            System.Windows.Media.Animation.Storyboard _storyboard;
+            _storyboard = Resources["HideLog"] as System.Windows.Media.Animation.Storyboard;
+            _storyboard.Begin(menuCanvas);
+            openPanel = FertilisersAndPesticidesPanel;
+
+            functions.Calling();
+            //(FertilisersAndPesticidesPanel.Children[0] as DataGrid).DataContext = ;
 
             isMenuOpen = false;
         }
