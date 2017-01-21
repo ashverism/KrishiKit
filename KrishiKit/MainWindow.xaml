@@ -28,13 +28,13 @@
                 </MenuItem>
             </Menu>
             <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33" Panel.ZIndex="200">
-                <Button Content="Login/Signup" Background="Moccasin" Margin="0,20,0,0" Height="31" Click="showLoginPanel"/>
-                <Button Content="Home/News" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showHome"/>
-                <Button Content="Weather" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showWeatherPanel"/>
-                <Button Content="Fertilisers/Pesticides" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showFPPanel"/>
-                <Button Content="Crop Insurance" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showInsurancePanel"/>
-                <Button Content="Minimum Support Price" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showMSPPanel"/>
-                <Button Content="DD Kisan" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showVideosPanel"/>
+                <Button BorderBrush="Moccasin" Content="Login/Signup" Background="Moccasin" Margin="0,20,0,0" Height="31" Click="showLoginPanel"/>
+                <Button BorderBrush="Moccasin" Content="Home/News" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showHome"/>
+                <Button BorderBrush="Moccasin" Content="Weather" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showWeatherPanel"/>
+                <Button BorderBrush="Moccasin" Content="Fertilisers/Pesticides" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showFPPanel"/>
+                <Button BorderBrush="Moccasin" Content="Crop Insurance" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showInsurancePanel"/>
+                <Button BorderBrush="Moccasin" Content="Minimum Support Price" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showMSPPanel"/>
+                <Button BorderBrush="Moccasin" Content="DD Kisan" Height="31" Background="Moccasin" Margin="0,6,0,0" Click="showVideosPanel"/>
             </StackPanel>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
@@ -92,9 +92,8 @@
             <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="14" FontWeight="DemiBold" TextAlignment="Center" Height="25" Margin="16.5,35,0,0"><Run Text="Districtwise authorised pesticide dealers"/></TextBlock>
             <RadioButton x:Name="radioButton" Content="Fertilizers" GroupName="Chem" Margin="40,15,0,0"/>
             <RadioButton x:Name="radioButton1" Content="Pesticides" GroupName="Chem" Margin="30,15,0,0"/>
-            <ComboBox x:Name="cb1" Width="150" Margin="65,15,0,0"/>
+            <ComboBox x:Name="cb1" Width="150" Margin="65,15,0,0" SelectionChanged="showFPData"/>
             <DataGrid Visibility="Collapsed" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" ItemsSource="{Binding}" IsReadOnly="True"/>
-            <Button Content="Submit" Width="75" Margin="110,12,0,0" Click="showFPData"/>
         </WrapPanel>
         <WrapPanel x:Name="cropSuggestionPanel" Background="LightCyan" HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="289" Margin="-970,-1030,0,0">
             <TextBlock TextWrapping="Wrap" FontSize="14" FontWeight="DemiBold" TextAlignment="Center" Height="25" Margin="80,35,0,0"><Run Text="Crop Suggestion"/></TextBlock>

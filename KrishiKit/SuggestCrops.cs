@@ -44,10 +44,12 @@ tripura rice potato sugarcane jute
 uttarakhand rice wheat barley corn 
 uttarpradesh wheat rice pulses potato sugarcane 
 westbengal rice potato jute sugarcane wheat ";
-        static Dictionary<string, string> seasonMap = new Dictionary<string, string>();
-        static Dictionary<string, int> counter = new Dictionary<string, int>();
+        static Dictionary<string, string> seasonMap = null;
+        static Dictionary<string, int> counter = null;
         public static string getSuggestion(string state, string season)
         {
+            counter = new Dictionary<string, int>();
+            seasonMap = new Dictionary<string, string>();
             string ret = string.Empty;
             seasonMap["khareef"] = " rice paddy maize millet bajra jute ragi pulses soyabean oilseeds sugarcane ";
             seasonMap["rabi"] = " wheat barley oats gram pulses linseed oilseeds mustard ";
@@ -74,6 +76,8 @@ westbengal rice potato jute sugarcane wheat ";
                     }
                 }
             }
+            counter = null;
+            seasonMap = null;
             return ret;
         }
     }

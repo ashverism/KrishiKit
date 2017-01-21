@@ -261,10 +261,10 @@ namespace KrishiKit
                 suggestion = "No suggestions available";
             }
             suggestionBox.Visibility = Visibility.Visible;
-            suggestionBox.Text = suggestion;
+            suggestionBox.Text = "You can grow: " + suggestion;
         }
 
-        private void showFPData(object sender, RoutedEventArgs e)
+        private void showFPData(object sender, SelectionChangedEventArgs e)
         {
             bool isFertilisers = (bool)radioButton.IsChecked;
 
