@@ -30,9 +30,9 @@
             <StackPanel Background="Moccasin" Opacity="100" Height="449" Width="212" Canvas.Top="33"/>
         </Canvas>
         <Rectangle Fill="Black" Panel.ZIndex="100" HorizontalAlignment="Left" Height="483" Margin="-5,57,0,0" Stroke="Black" VerticalAlignment="Top" Width="21"/>
-        <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="120">
+        <!--<StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="insurancePanel" Panel.ZIndex="120">
             <WebBrowser Source="http://agri-insurance.gov.in/Login.aspx" Height="483"/>
-        </StackPanel>
+        </StackPanel>-->
         <StackPanel HorizontalAlignment="Left" Height="483" Margin="52,57,0,0" VerticalAlignment="Top" Width="289" x:Name="homePanel" Panel.ZIndex="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="22" Margin="112,84.5,113,0" TextWrapping="Wrap" FontSize="12.5" FontWeight="DemiBold" Text="News Feed" VerticalAlignment="Top" Width="64"/>
             <Canvas Background="LightCyan" HorizontalAlignment="Left" Height="375" Margin="17,0,0,0" VerticalAlignment="Top" Width="258">
@@ -59,5 +59,24 @@
                 <StackPanel Height="100" Canvas.Left="128" Canvas.Top="83" Width="100"/>
             </Canvas>
         </StackPanel>
+        <WrapPanel Panel.ZIndex="15" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="484,57,-413,0" VerticalAlignment="Top" Width="289">
+            <Label Content="Username" Width="102" Margin="15,180,0,0"/>
+            <TextBox x:Name="textBox1" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,180,0,0"/>
+            <Label Content="Password" Width="102" Margin="15,20,0,0"/>
+            <PasswordBox x:Name="passwordBox1" Width="148" Margin="0,20,0,0"/>
+            <Button Content="Login" Width="75" Height="25" Margin="54,30,0,0"/>
+            <Button Content="Signup" Width="75" Height="25" Margin="25,30,0,0"/>
+
+        </WrapPanel>
+
+        <WrapPanel Panel.ZIndex="18" Background="LightCyan" HorizontalAlignment="Left" Height="483" Margin="-590,57,0,0" VerticalAlignment="Top" Width="294">
+            <Label TextElement.FontSize="13" TextElement.FontWeight="DemiBold" Content="Signup" Width="81" Margin="110,125,0,0"/>
+            <Label TextElement.FontSize="12.5" Content="Username" Width="102" Margin="15,20,0,0"/>
+            <TextBox x:Name="textBox" Height="25" TextWrapping="Wrap" Text="" Width="148" Margin="0,20,0,0"/>
+            <Label TextElement.FontSize="12.5" Content="Password" Width="102" Margin="15,20,0,0"/>
+            <PasswordBox x:Name="passwordBox2" Width="148" Margin="0,20,0,0"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" TextAlignment="Center" Text="This is a Text Block. User data would be shown here." Width="251" Height="56" Margin="18,20,0,0"/>
+            <Button x:Name="button1" Content="Signup" Width="75" Height="25" Margin="105,10,0,0"/>
+        </WrapPanel>
     </Grid>
 </Window>
