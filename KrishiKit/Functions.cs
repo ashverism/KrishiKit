@@ -135,6 +135,7 @@ namespace KrishiKit
             weatherDataTable.Columns.Add("Temperature", typeof(string));
             weatherDataTable.Columns.Add("Humidity", typeof(string));
             weatherDataTable.Columns.Add("Sky", typeof(string));
+
             foreach (int item in dict.Keys)
             {
                 Fore v = dict[item];
